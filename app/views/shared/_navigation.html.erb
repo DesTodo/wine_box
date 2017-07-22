@@ -1,16 +1,17 @@
 
-<nav class="navbar navbar-default" role="navigation">
+<!-- <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"> only sip on wines you love</a>
     </div>
   </div>
-</nav>
+</nav> -->
 
 
 <div class='col-md-12 navbar navbar-default navbar-static-top'>
   <a href='/' class='navbar-brand'>wine box</a>
   <ul class='nav navbar-nav navbar-right'>
-    <li><a href = "about.html">About</a></li>
+    <li> <%= link_to "search our wine list", wines_path %> </li>
+    <li> <%= link_to "what is a wine fix", about_path %> </li>
   </ul>
 </div>
