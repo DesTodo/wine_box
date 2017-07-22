@@ -1,5 +1,7 @@
 require "rails_helper"
-
+# add scenaario as an authorized client and sees
+# as an authorized user and sees
+# as an unauthorized guest (not logged in)
 RSpec.feature "User logs in and out" do
   scenario "with valid credentials" do
     user_attributes = {

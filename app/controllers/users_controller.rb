@@ -13,10 +13,16 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
     flash[:welcome] = "Successful login"
 
-    render "show"
+    redirect_to user_path(@user)
   end
 
-
+  def index
+    if current_user.client?
+      @users = User.all
+    else
+      render file: "/public/404"
+    end
+  end
 
   private
 

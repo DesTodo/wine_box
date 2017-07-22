@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-  def index
-
+  def homepage
+    render :index
   end
 end
