@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @search = User.find(params[:id])
   end
 
   def create
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
     flash[:welcome] = "Successful login"
 
-    redirect_to user_path(@user)
+    render "show"
   end
 
 

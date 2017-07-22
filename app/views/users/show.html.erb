@@ -1,0 +1,6 @@
+
+<%= render "shared/search_filters", search: @wine do |f| %>
+  <p>
+    Name contains: <%= f.text_field :variety %>
+  </p>
+<% end %>
