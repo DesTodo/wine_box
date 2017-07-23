@@ -9,10 +9,10 @@ RSpec.describe User, type: :model do
   end
 
 
-  it "is created as guest by default" do
+  it "is created as subscriber by default" do
     default = create(:user)
 
-    expect(default.role).to eq("guest")
-    expect(default.guest?).to be_truthy
+    expect(default.role).to eq("subscriber")
+    expect(default.subscriber?).to be_truthy
   end
 end
