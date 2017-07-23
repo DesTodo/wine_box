@@ -1,9 +1,41 @@
-<%= form_for @user do |f| %>
-<%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <!-- <%= f.label :role %>
-  <%= f.text_field :role %> -->
-  <%= f.submit "Create Account" %>
-<% end %>
+<% provide(:title, 'Sign up') %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>Sign up</h3>
+    <%= form_for @user do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name  %><br>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %><br>
+
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %><br>
+
+      <%= f.label :age %>
+      <%= f.text_field :age %><br>
+      <%= f.label :verify_you_are_over_21_years_old %>
+      <%= radio_button_tag(:age, "child") %>
+      <%= label_tag(:age_child, "I am younger than 21") %>
+      <%= radio_button_tag(:age, "adult") %>
+      <%= label_tag(:age_adult, "I'm over 21") %><br>
+
+      <%= f.label :select_account_type %>
+      <%= f.select(:role) do %>
+        <% [['wine lover account', 1], ['business account', 2]].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %><br>
+
+      <%= f.label :username %>
+      <%= f.text_field :username %><br>
+      <%= f.label :password %>
+      <%= f.password_field :password %><br>
+
+      <%= f.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
