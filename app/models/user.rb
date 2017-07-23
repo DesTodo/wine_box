@@ -5,6 +5,11 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
   validates :role, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :age, presence: true
+  validates :zipcode, presence: true
+
 
   enum role: ["guest", "subscriber", "client", "admin"]
 
