@@ -5,5 +5,8 @@
 <!--  http://localhost:3000/users ?? why??? -->
 <h2> user's personal page with lists and search options? </h2>
 
+
 <button type = 'button' class='btn btn-warning'>
 <%= link_to "Logout", logout_path, method: :delete %></button>
+
+<%=  render "wines/wine_search.html.erb" %>

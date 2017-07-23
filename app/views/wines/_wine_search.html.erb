@@ -1,0 +1,15 @@
+
+<%= form_for(current_user) do %>
+  <%= label_tag(:wine_name, "Search for:") %>
+  <%= text_field_tag(wine.name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+
+<form accept-charset="UTF-8" action="/wines" method="get">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="q">Search for:</label>
+  <input id="q" name="q" type="text" />
+  <input name="commit" type="submit" value="index" />
+</form>

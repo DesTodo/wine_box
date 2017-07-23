@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/clients/:id/dashboard', to: 'users#index'
 
 
-  resources :wines, only: [:index]
+  resources :wines
 
 end
