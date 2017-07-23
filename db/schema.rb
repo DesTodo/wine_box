@@ -17,8 +17,12 @@ ActiveRecord::Schema.define(version: 20170720175601) do
 
   create_table "users", force: :cascade do |t|
     t.text "username"
-    t.integer "role"
     t.text "password_digest"
+    t.integer "role"
+    t.text "first_name"
+    t.text "last_name"
+    t.integer "zipcode"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,10 +30,13 @@ ActiveRecord::Schema.define(version: 20170720175601) do
   create_table "wines", force: :cascade do |t|
     t.text "name"
     t.text "variety"
-    t.integer "price"
-    t.text "label"
+    t.float "price"
+    t.text "designation"
     t.text "maker"
     t.text "description"
+    t.text "country"
+    t.integer "points"
+    t.text "nickname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

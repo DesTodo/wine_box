@@ -3,10 +3,13 @@ class CreateWines < ActiveRecord::Migration[5.1]
     create_table :wines do |t|
       t.text :name
       t.text :variety
-      t.integer :price
-      t.text :label
+      t.float :price
+      t.text :designation
       t.text :maker
       t.text :description
+      t.text :country
+      t.integer :points
+      t.text :nickname
 
       t.timestamps
     end
