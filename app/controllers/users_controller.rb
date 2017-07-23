@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @search = User.find(params[:id])
+    if session[:user_id] == nil
+      render file: "/public/404"
+    else
+
+    end
   end
 
   def create
