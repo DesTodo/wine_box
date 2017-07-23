@@ -24,7 +24,7 @@
 
       <%= f.label :select_account_type %>
       <%= f.select(:role) do %>
-        <% [['wine lover account', 1], ['business account', 2]].each do |c| -%>
+      <% [['subscriber', 1], ['business account', client: 2]].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %><br>
