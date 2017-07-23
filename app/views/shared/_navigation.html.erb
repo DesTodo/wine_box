@@ -1,20 +1,10 @@
-
-<!-- <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/"> only sip on wines you love</a>
-    </div>
-  </div>
-</nav> -->
-
-
 <div class='col-md-12 navbar navbar-default navbar-static-top'>
   <a href='/' class='navbar-brand'>wine box</a>
   <ul class='nav navbar-nav navbar-right'>
     <li> <%= link_to "search our wine list", wines_path %> </li>
     <li> <%= link_to "what is a wine fix", about_path %> </li>
   </ul>
-  <% flash.each do |type, message| %>
-    <%= content_tag :div, message, class: "flash_#{type}" %>
+    <% flash.each do |type, message| %>
+    <strong> <%= content_tag :div, message, class: "flash_#{type}" %> </strong>
   <% end %>
 </div>

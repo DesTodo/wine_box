@@ -11,12 +11,6 @@
   <body>
     <%= render 'shared/navigation' %>
 
-
-    <% if current_user %>
-        Welcome, <%= current_user.username %><br><br>
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
