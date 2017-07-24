@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if session[:user_id] == nil
       render file: "/public/404"
     else
-
+      @user = User.find(params[:id])
     end
   end
 

@@ -1,0 +1,10 @@
+<h3> <%=  @wine_list.name %></h3>
+<ul>
+  <% @wines.each do |wine| %>
+    <li>
+    <%= link_to wine.name, wine_path(wine) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Homepage", user_path(@user) %>

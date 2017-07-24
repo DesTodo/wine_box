@@ -1,12 +1,19 @@
 <% if current_user %> Welcome, <%= current_user.username %> <% end %>
 
+<button type = 'button' class='btn btn-success'>
+<%= link_to "Create New List", new_wine_list_path %></button>
 
-<h1> this is the personal page for a brand new user where they can make initial selections and setup</h1>
-<!--  http://localhost:3000/users ?? why??? -->
-<h2> user's personal page with lists and search options? </h2>
+<ul>
+  <% @user.wine_lists.each do |list| %>
+    <li>
+     <%= link_to list.name, wine_list_path(list) %>
+    </li>
+  <% end %>
+</ul>
 
 
 <button type = 'button' class='btn btn-warning'>
 <%= link_to "Logout", logout_path, method: :delete %></button>
+
 
 <!-- #<%#=  render "wines/wine_search.html.erb" %> -->

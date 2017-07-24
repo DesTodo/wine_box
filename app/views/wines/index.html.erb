@@ -1,0 +1,13 @@
+<h3> Hello <%= @user.username %> </h3>
+
+<ul>
+<% @wines.each do |wine| %>
+  <li>
+    <%= wine.name %>
+    <%= form_tag("/wine_lists/:id", method: "PATCH") do %>
+      <%= collection_select(:wine_list, 'id', WineList.all, :id, :name, prompt: true) %>
+      <%= submit_tag("Add Wine To List") %>
+    <% end %>
+  </li>
+<% end %>
+</ul>

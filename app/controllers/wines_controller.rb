@@ -1,7 +1,12 @@
 class WinesController < ApplicationController
-  before_method :current_user, only [:index]
+  before_action :current_user, only: [:index]
+
   def new
     @wine = Wine.new
+  end
+
+  def show
+    @wine = Wine.find(params[:id])
   end
 
   def create
@@ -11,12 +16,13 @@ class WinesController < ApplicationController
   end
 
   def index
-    #search form
+    @wines = Wine.all
   end
 
   def current_user?
     if current_user.id != params[:user_id].to_i
       render file: "404"
+    end
   end
 
 end
