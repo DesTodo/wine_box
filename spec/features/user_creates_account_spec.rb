@@ -5,13 +5,13 @@ RSpec.feature "User creates a new account" do
     user_attributes = {
       username: "username",
       password: "mypassword",
-      role: 0
+      role: 1
     }
 
     visit '/users/new'
     fill_in "user[username]", with: user_attributes[:username]
     fill_in "user[password]", with: user_attributes[:password]
-    fill_in "user[role]", with: user_attributes[:role]
+    select "user[role]", :from => user_attributes[:role]
     click_on "Create Account"
 
     user = User.last

@@ -6,7 +6,11 @@ RSpec.feature "User logs in and out" do
   scenario "with valid credentials" do
     user_attributes = {
       username: "username",
-      password: "secretpassword"
+      password: "secretpassword",
+      first_name: "name",
+      last_name: "last",
+      age: 67,
+      zipcode: 80202,
     }
 
     user = User.create(user_attributes)

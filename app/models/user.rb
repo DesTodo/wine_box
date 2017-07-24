@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_secure_password
   after_initialize :init
 
+  has_many :wine_lists
+
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
   validates :role, presence: true
